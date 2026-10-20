@@ -1,17 +1,16 @@
 import 'dart:async';
 
 import 'package:flame/components.dart';
-import 'package:flame/flame.dart';
-import 'package:flappy_bird/game/assets.dart';
+import 'package:flappy_bird/constant/assets.dart';
 
 class Background extends SpriteComponent {
   Background(Vector2 size) : super(position: Vector2(0, 0), size: size);
 
   @override
   FutureOr<void> onLoad() async {
-    final background = await Flame.images.load(Assets.background);
+    //final background = await Flame.images.load(Assets.background);
 
-    sprite = Sprite(background);
+    sprite = await Sprite.load(Assets.background);
     return super.onLoad();
   }
 }
