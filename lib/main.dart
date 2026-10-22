@@ -1,6 +1,4 @@
-import 'package:flame/game.dart';
-import 'package:flappy_bird/game/flappy_bird_game.dart';
-import 'package:flappy_bird/screens/main_menu.dart';
+import 'package:flappy_bird/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,9 +13,22 @@ class MyGame extends StatelessWidget {
     return MaterialApp(
       title: 'Flappy Bird',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      // home: GameWidget(game: FlappyBirdGame()),
-      home: const MainMenuScreen(),
+      theme: ThemeData(
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.orange,
+            foregroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadiusGeometry.circular(8),
+            ),
+            padding: .zero,
+            minimumSize: const Size(130, 30),
+            textStyle: const TextStyle(fontSize: 20, fontFamily: 'Game'),
+          ),
+        ),
+      ),
+
+      home: HomeScreen(),
     );
   }
 }
