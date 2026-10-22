@@ -28,7 +28,7 @@ class MyGame extends StatelessWidget {
         ),
       ),
 
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

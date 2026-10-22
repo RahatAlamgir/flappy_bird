@@ -9,6 +9,7 @@ import 'package:flappy_bird/components/thorns/thorn.dart';
 import 'package:flappy_bird/constant/config.dart';
 import 'package:flappy_bird/constant/assets.dart';
 import 'package:flappy_bird/game/flappy_bird_game.dart';
+import 'package:flappy_bird/service/score_data.dart';
 import 'package:flutter/material.dart';
 
 class Bird extends SpriteGroupComponent<BirdMovement>
@@ -56,6 +57,9 @@ class Bird extends SpriteGroupComponent<BirdMovement>
   }
 
   void gameOver() {
+    if (ScoreData.bestScore < score) {
+      ScoreData.addScore(score);
+    }
     FlameAudio.play(Assets.collision);
 
     game.score.text = '';
