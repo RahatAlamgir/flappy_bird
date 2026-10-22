@@ -2,4 +2,6 @@
 
 Flutter Game project.
 
+![SS](assets/images/ss/FlappyBird.png)
+
 
