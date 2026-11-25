@@ -22,13 +22,7 @@ class FlappyBirdGame extends FlameGame
   Future<void> onLoad() async {
     bird = Bird();
 
-    addAll([
-      Background(),
-      bird,
-      Ground(),
-      score = buildScore(),
-      //thornsManager, scoreText
-    ]);
+    addAll([Background(), bird, Ground(), score = buildScore()]);
     thornDelay.onTick = () => add(ThronGroup());
 
     return super.onLoad();
